@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Yt-samples-python by tothebeat</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Yt-samples-python</h1>
+        <p>Adding some important bits to the YouTube Python code samples repo.</p>
+
+        <p class="view"><a href="https://github.com/tothebeat/yt-samples-python">View the Project on GitHub <small>tothebeat/yt-samples-python</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/tothebeat/yt-samples-python/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/tothebeat/yt-samples-python/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/tothebeat/yt-samples-python">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="quickstart" class="anchor" href="#quickstart"><span class="octicon octicon-link"></span></a>Quickstart</h1>
+
+<p>First, clone this repo!</p>
+
+<div class="highlight highlight-bash"><pre>git clone https://github.com/tothebeat/yt-samples-python.git
+</pre></div>
+
+<p>Install <a href="http://virtualenvwrapper.readthedocs.org/en/latest/">virtualenvwrapper</a> and its prerequisites. Then run:</p>
+
+<div class="highlight highlight-bash"><pre>mkvirtualenv yt-samples-python
+pip install -r requirements.txt
+</pre></div>
+
+<p>Download your application's client secrets JSON file from the <a href="https://cloud.google.com/console">Google Developers Console</a> and save to this folder as <code>client_secrets.json</code>. If you do not add this file, you will see something like</p>
+
+<pre><code>$ python upload_video.py --file=Emperor-Sample.avi
+
+WARNING: Please configure OAuth 2.0
+
+To make this sample run you will need to populate the client_secrets.json file
+found at:
+
+   /home/nick/src/youtube-upload/yt-samples-python/client_secrets.json
+
+with information from the APIs Console
+https://code.google.com/apis/console#access
+
+For more information about the client_secrets.json file format, please visit:
+https://developers.google.com/api-client-library/python/guide/aaa_client_secrets
+</code></pre>
+
+<p>When creating the Client ID in the Google Developers Console, be sure to choose "Installed application" at the prompt for Application Type. Instead of moving the <code>client_secrets.json</code> file to this folder, try putting it somewhere safe and create a symlink to it:</p>
+
+<pre><code>$ mkdir ~/.secrets
+$ mv ~/Downloads/downloaded_client_secrets_asdfh234g43trg234tr2gf2.json ~/.secrets/client_secrets.json
+$ ln -s ~/.secrets/client_secrets.json ~/src/yt-samples-python/client_secrets.json
+</code></pre>
+
+<p>You may also need to change the Product name to something other than the default under the "Consent screen" section of the APIs &amp; Auth settings in the Google Developers Console.</p>
+
+<h1>
+<a name="upload-a-video-to-youtube" class="anchor" href="#upload-a-video-to-youtube"><span class="octicon octicon-link"></span></a>Upload a Video to YouTube</h1>
+
+<pre><code>python upload_video.py --file=Emperor-Sample.avi
+</code></pre>
+
+<p>If successful, you will see something like this:</p>
+
+<pre><code>$ python upload_video.py --file=Emperor-Sample.avi
+WARNING:root:This function, oauth2client.tools.run(), and the use of the gflags library are deprecated and will be removed in a future version of the library.
+Your browser has been opened to visit:
+
+   &lt;URL REDACTED&gt;
+
+If your browser is on a different machine then exit and re-run
+this application with the command-line parameter
+
+  --noauth_local_webserver
+
+Authentication successful.
+Uploading file...
+'Test Title' (video id: &lt;REDACTED&gt;) was successfully uploaded.
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/tothebeat">tothebeat</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
