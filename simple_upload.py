@@ -42,7 +42,7 @@ def main(argv):
   if credentials is None or credentials.invalid:
     credentials = run(flow, storage)
 
-  youtube = build('youtube', 'v3alpha',
+  youtube = build('youtube', 'v3',
       http=credentials.authorize(httplib2.Http()))
 
   insert_request = youtube.videos().insert(
